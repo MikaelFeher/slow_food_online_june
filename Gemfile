@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development do
