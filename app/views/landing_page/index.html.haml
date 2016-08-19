@@ -1,15 +1,22 @@
 %h1 What do you feel like tonight?
+%ul
+  %li Asian
+  %li Italian
+  %li Greek
+%div#location_form
+  %form{action: ""}
+    Where are you:
+    %input{name: "location", placeholder: "Type in your location", type: "text"}
+    %input{type: "submit", value: "Submit"}
+  %br
+%div{style: 'width: 800px'}
+  #map{style: 'width: 800px; height: 400px; background-color: green;'}
+    %h2 Map
 %h2
   List of restaurants
 %ul
   %li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-%div{style: 'width: 800px'}
-  #map{style: 'width: 800px; height: 400px; background-color: green;'}
-    %h2 Map
-
 
 %script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLlFOiBK4ncqm_t4-QPo_-VmhD84MNhHc&libraries=places&callback=initMap" async defer)
 = javascript_include_tag 'gmaps'
 = javascript_include_tag 'landing_page'
-
-
