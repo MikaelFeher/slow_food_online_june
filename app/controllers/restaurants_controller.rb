@@ -26,11 +26,11 @@ class RestaurantsController < ApplicationController
       flash[:success] = 'Information successfully updated'
       redirect_to root_path
     else
-      flash[:error] = "Encountered errors while updating: #{@restaurant.errors.full_messages}"
+      # flash[:error] = "Encountered errors while updating: #{@restaurant.errors.full_messages}"
+      message
       redirect_to action: :edit
     end
   end
-
 
   def restaurant_params
     params.require(:restaurant).permit(:name,
@@ -41,5 +41,11 @@ class RestaurantsController < ApplicationController
                                        :email_address,
                                        :description,
                                        :cuisine)
+  end
+
+  def message
+    message = 'Encountered errors while updating:'
+    @restaurant.errors.full_messages.each {|str| message = [message, str].join(' ')}
+    flash[:error] = message
   end
 end

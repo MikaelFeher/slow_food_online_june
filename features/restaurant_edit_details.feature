@@ -21,5 +21,5 @@ Feature: As a system user
   Scenario: Updating with an empty field
     And I fill in "Zip code" with ""
     And I click on the "Save" button
-    And I should see "Save failed. Fields can't be empty."
+    And I should see "Encountered errors while updating: Zip code can't be blank"
     Then I should be on the "edit" page for "Mikey's"
