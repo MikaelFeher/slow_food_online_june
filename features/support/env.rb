@@ -4,14 +4,10 @@ Coveralls.wear_merged!('rails')
 require 'cucumber/rails'
 require 'capybara/poltergeist'
 
-
-
 ActionController::Base.allow_rescue = false
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,
-                                    js_error: false)
-
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
 end
 
 Capybara.javascript_driver = :poltergeist
