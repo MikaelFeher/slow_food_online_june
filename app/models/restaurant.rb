@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
+  include ActiveModel::Validations
 
-  belongs_to :user
   validates_presence_of :name,
                         :address,
                         :zip_code,
@@ -9,4 +9,6 @@ class Restaurant < ApplicationRecord
                         :email_address,
                         :description,
                         :cuisine
+  belongs_to :user
+
 end

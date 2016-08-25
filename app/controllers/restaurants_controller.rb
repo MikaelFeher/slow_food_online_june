@@ -26,8 +26,8 @@ class RestaurantsController < ApplicationController
       flash[:success] = 'Information successfully updated'
       redirect_to root_path
     else
+      flash[:error] = "Encountered errors while updating: #{@restaurant.errors.full_messages}"
       redirect_to action: :edit
-      flash[:error] = 'Save failed. Fields can\'t be empty.'
     end
   end
 
