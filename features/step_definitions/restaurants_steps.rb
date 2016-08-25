@@ -8,16 +8,13 @@ end
 
 Then(/^I should see all the fields$/) do
   steps %q{
-   Then I should see the field "Restaurant name"
-   Then I should see the field "Restaurant address"
+   Then I should see the field "Name"
+   Then I should see the field "Address"
    Then I should see the field "Zip code"
    Then I should see the field "Delivery radius"
-   Then I should see the field "Public phone number"
-   Then I should see the field "Owner name"
-   Then I should see the field "Owner address"
-   Then I should see the field "Private phone number"
+   Then I should see the field "Phone number"
    Then I should see the field "Email address"
-   Then I should see the field "Restaurant description"
+   Then I should see the field "Description"
    Then I should see the field "Select your cuisine"
  }
 end

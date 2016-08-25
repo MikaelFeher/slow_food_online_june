@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @restaurant = Restaurant.new
@@ -13,6 +13,10 @@ class RestaurantsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @restaurant = Restaurant.find(params[:id])
   end
 
 

@@ -9,5 +9,4 @@ class Restaurant < ApplicationRecord
                         :email_address,
                         :description,
                         :cuisine
-
 end

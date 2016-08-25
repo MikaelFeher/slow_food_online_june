@@ -32,5 +32,9 @@ def path(pagename)
       new_user_registration_path
     when 'create menu'
       new_menu_path
+    when 'restaurant edit details'
+      edit_restaurant_path(@restaurant)
+    else
+      you_have_not_defined_a_path
   end
 end
