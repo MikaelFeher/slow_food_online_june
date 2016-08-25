@@ -19,6 +19,12 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def update
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update_attributes(restaurant_params)
+    flash[:success] = 'Information successfully updated'
+    redirect_to root_path
+  end
 
 
   def restaurant_params
