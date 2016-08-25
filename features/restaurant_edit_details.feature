@@ -15,7 +15,7 @@ Feature: As a system user
 
   Scenario: Updating the address
     Given I am on the "edit" page for "Mikey's"
-    And I fill in "address" with "Main Street 224"
+    And I fill in "Address" with "Main Street 224"
     And I click on the "Update info" button
     Then I should be on the "home" page
     And I should see "Information successfully updated"
