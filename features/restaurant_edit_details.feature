@@ -5,17 +5,21 @@ Feature: As a system user
   Background:
     Given I am logged in as a user of the system
     And the following restaurant exists
-    | id | name    | address     | zip_code |
-    | 1  | Mikey's | Main Street | 12345    |
+    | name    |
+    | Mikey's | 
 
-  Scenario: Viewing the restaurant edit details page
-    Given I am on the "edit" page for "Mikey's"
-    Then I should see all the fields
-    And I should see a "Update info" button
+    And I am on the "edit" page for "Mikey's"
 
   Scenario: Updating the address
-    Given I am on the "edit" page for "Mikey's"
     And I fill in "Address" with "Main Street 224"
+    And I select "5km" from "Delivery radius"
+    And I select "Italian" from "Select your cuisine"
     And I click on the "Update info" button
     Then I should be on the "home" page
     And I should see "Information successfully updated"
+
+  Scenario: Updating with an empty field
+    And I fill in "Zip code" with ""
+    And I click on the "Update info" button
+    And I should see "Save failed. Fields can't be empty."
+    Then I should be on the "edit" page for "Mikey's"

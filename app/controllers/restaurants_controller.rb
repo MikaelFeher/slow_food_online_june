@@ -21,9 +21,14 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.update_attributes(restaurant_params)
-    flash[:success] = 'Information successfully updated'
-    redirect_to root_path
+
+    if @restaurant.update_attributes(restaurant_params)
+      flash[:success] = 'Information successfully updated'
+      redirect_to root_path
+    else
+      redirect_to action: :edit
+      flash[:error] = 'Save failed. Fields can\'t be empty.'
+    end
   end
 
 

@@ -16,8 +16,10 @@ Then(/^I should be on the "([^"]*)" page$/) do |expected_page|
       path = new_user_registration_path
     when 'restaurants' then
       path = new_restaurant_path
+    when 'edit' then
+      path = edit_restaurant_path(@restaurant)
     else
-      you_have_not_defined_a_path
+      path = 'You have not defined a path'
   end
   expect(page.current_path).to eq path
 end
