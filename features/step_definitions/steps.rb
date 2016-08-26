@@ -32,9 +32,7 @@ def path(pagename)
       new_user_registration_path
     when 'create menu'
       new_menu_path
-    when 'edit'
-      edit_restaurant_path(@restaurant)
     else
-      'You have not defined a path'
+      raise 'You have not defined a path yet'
   end
 end
