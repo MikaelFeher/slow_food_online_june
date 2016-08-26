@@ -26,8 +26,7 @@ class RestaurantsController < ApplicationController
       flash[:success] = 'Information successfully updated'
       redirect_to root_path
     else
-      # flash[:error] = "Encountered errors while updating: #{@restaurant.errors.full_messages}"
-      message
+      set_flash_message
       redirect_to action: :edit
     end
   end
@@ -43,7 +42,7 @@ class RestaurantsController < ApplicationController
                                        :cuisine)
   end
 
-  def message
+  def set_flash_message
     message = 'Encountered errors while updating:'
     @restaurant.errors.full_messages.each {|str| message = [message, str].join(' ')}
     flash[:error] = message
