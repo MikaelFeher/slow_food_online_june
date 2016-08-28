@@ -4,9 +4,8 @@ class MenusController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.find(current_user.restaurants.first)
+    @restaurant = Restaurant.find_by(id: current_user.restaurants.first.id)
     @menu = @restaurant.menus.build(menu_params)
-    binding.pry
     if @menu.save
       flash[:notice] = "#{@menu.name} created successfully"
       redirect_to root_path
