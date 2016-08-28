@@ -4,8 +4,11 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.new(menu_params)
+    @restaurant = Restaurant.find(current_user.restaurants.first)
+    @menu = @restaurant.menus.build(menu_params)
+    binding.pry
     if @menu.save
+      flash[:notice] = "#{@menu.name} created successfully"
       redirect_to root_path
     else
       flash[:error] = 'A name is required'
