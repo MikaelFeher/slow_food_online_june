@@ -10,7 +10,7 @@ Feature: As a system user
   Scenario: Create a menu
     And I fill "Name" with "Lunch menu"
     And I click "Create"
-    Then I should be on the "home" page
+    Then I should be on the "create dish" page
 
   Scenario: Reject when missing name value
     And I fill "Name" with ""

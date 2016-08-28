@@ -8,7 +8,7 @@ class MenusController < ApplicationController
     @menu = @restaurant.menus.build(menu_params)
     if @menu.save
       flash[:notice] = "#{@menu.name} created successfully"
-      redirect_to root_path
+      redirect_to new_menu_dish_path(@restaurant.menus.last)
     else
       flash[:error] = 'A name is required'
       redirect_to new_menu_path
