@@ -4,7 +4,9 @@ Feature: As a System user
 
 
   Background:
-    Given the following restaurant exists
+    Given I am logged in as a user of the system
+
+    And the following restaurant exists
       | name       |
       | Salvatores |
 
@@ -23,4 +25,5 @@ Feature: As a System user
   Scenario: Display dish info about Capricciosa
     Given I am on the "show" page for dish: "Capricciosa"
     And I click on "Order"
-    Then I should see "Capricciosa has been added to your order"
+    Then "Capricciosa" should be added to my order
+    And I should see "Capricciosa has been added to your order"
