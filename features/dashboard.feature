@@ -9,7 +9,7 @@ Feature: As a system user
     And that following menus exist
       | name  |
       | Lunch |
-    And I am on the "dashboard" page for "Mikey's"    
+    And I am on the "dashboard" page for "Mikey's"
 
   Scenario: Navigating to create menu page
     And I click on "Create a menu"
