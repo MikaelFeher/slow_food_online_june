@@ -7,14 +7,14 @@ RSpec.describe 'Api::V1::RestaurantsController', type: :request do
   describe 'GET /v1/restaurants' do
     it 'should return name of restaurant_1' do
       get '/api/v1/restaurants'
-      # json_response = JSON.parse(response.body)
-      expect(['restaurants'][0]['name']).to eq 'Mikey'
+      json_response = JSON.parse(response.body)
+      expect(json_response['restaurants'][0]['name']).to eq 'Mikey'
     end
 
     it 'should return a list of restaurants' do
       get '/api/v1/restaurants'
-      # json_response = JSON.parse(response.body)
-      expect(['restaurants'].size).to eq(2)
+      json_response = JSON.parse(response.body)
+      expect(json_response['restaurants'].size).to eq(2)
     end
   end
 end
